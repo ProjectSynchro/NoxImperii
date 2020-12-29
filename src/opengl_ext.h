@@ -10,24 +10,24 @@
 #include "SDL_opengl.h"
 
 /* GL_SGIS_generate_mipmap */
-void (APIENTRY *nglGenerateMipmap)(GLenum target);
+extern void (APIENTRY *nglGenerateMipmap)(GLenum target);
 
 /* GL_ARB_multitexture */
-void (APIENTRY *nglActiveTexture)(GLenum texture);
-void (APIENTRY *nglClientActiveTexture)(GLenum texture);
-void (APIENTRY *nglMultiTexCoord2d)(GLenum target,GLdouble s,GLdouble t);
+extern void (APIENTRY *nglActiveTexture)(GLenum texture);
+extern void (APIENTRY *nglClientActiveTexture)(GLenum texture);
+extern void (APIENTRY *nglMultiTexCoord2d)(GLenum target,GLdouble s,GLdouble t);
 
 /* GL_ARB_vertex_buffer_object */
-void (APIENTRY *nglGenBuffers)(GLsizei n, GLuint* ids);
-void (APIENTRY *nglBindBuffer)(GLenum target, GLuint id);
-void (APIENTRY *nglBufferData)(GLenum target, GLsizei size, const void* data, GLenum usage);
-void (APIENTRY *nglBufferSubData)(GLenum target, GLint offset, GLsizei size, void* data);
-void* (APIENTRY *nglMapBuffer)(GLenum target, GLenum access);
-void (APIENTRY *nglUnmapBuffer)(GLenum target);
-void (APIENTRY *nglDeleteBuffers)(GLsizei n, const GLuint* ids);
+extern void (APIENTRY *nglGenBuffers)(GLsizei n, GLuint* ids);
+extern void (APIENTRY *nglBindBuffer)(GLenum target, GLuint id);
+extern void (APIENTRY *nglBufferData)(GLenum target, GLsizei size, const void* data, GLenum usage);
+extern void (APIENTRY *nglBufferSubData)(GLenum target, GLint offset, GLsizei size, void* data);
+extern void* (APIENTRY *nglMapBuffer)(GLenum target, GLenum access);
+extern void (APIENTRY *nglUnmapBuffer)(GLenum target);
+extern void (APIENTRY *nglDeleteBuffers)(GLsizei n, const GLuint* ids);
 
 /* GL_ARB_texture_compression */
-void (APIENTRY *nglCompressedTexImage2D)(GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, const GLvoid *);
+extern void (APIENTRY *nglCompressedTexImage2D)(GLenum, GLint, GLenum, GLsizei, GLsizei, GLint, GLsizei, const GLvoid *);
 
 
 /*

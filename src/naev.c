@@ -1412,11 +1412,23 @@ static void debug_translateAddress( const char *symbol, bfd_vma address )
    asection *section;
 
    for (section = abfd->sections; section != NULL; section = section->next) {
+#ifdef bfd_get_section_flags
       if ((bfd_get_section_flags(abfd, section) & SEC_ALLOC) == 0)
+#else /* bfd_get_section_flags */
+      if ((bfd_section_flags(section) & SEC_ALLOC) == 0)
+#endif /* bfd_get_section_flags */
          continue;
 
+#ifdef bfd_get_section_vma
       bfd_vma vma = bfd_get_section_vma(abfd, section);
+#else /* bfd_get_section_vma */
+      bfd_vma vma = bfd_section_vma(section);
+#endif /* bfd_get_section_vma */
+#ifdef bfd_get_section_size
       bfd_size_type size = bfd_get_section_size(section);
+#else /* bfd_get_section_size */
+      bfd_size_type size = bfd_section_size(section);
+#endif /* bfd_get_section_size */
       if (address < vma || address >= vma + size)
          continue;
 
