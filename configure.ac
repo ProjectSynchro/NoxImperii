@@ -226,7 +226,7 @@ AC_ARG_ENABLE([lua],
         ;;
     esac
   ], [
-    used_lua=luajit
+    used_lua=internal
   ])
 AC_MSG_RESULT([$used_lua])
 
